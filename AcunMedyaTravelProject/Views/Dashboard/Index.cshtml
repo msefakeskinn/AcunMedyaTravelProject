@@ -1,0 +1,271 @@
+﻿@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<style>
+    .navy-gradient-1 { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); }
+    .navy-gradient-2 { background: linear-gradient(135deg, #1e40af 0%, #60a5fa 100%); }
+    .navy-gradient-3 { background: linear-gradient(135deg, #1d4ed8 0%, #93c5fd 100%); }
+    .navy-gradient-4 { background: linear-gradient(135deg, #2563eb 0%, #dbeafe 100%); }
+    
+    .stat-card {
+        border-radius: 20px;
+        padding: 2rem;
+        color: white;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(30, 58, 138, 0.3);
+        transition: all 0.4s ease;
+        border: none;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .stat-card:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(30, 58, 138, 0.4);
+    }
+    
+    .stat-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        transition: left 0.5s;
+    }
+    
+    .stat-card:hover::before {
+        left: 100%;
+    }
+    
+    .stat-number {
+        font-size: 3rem;
+        font-weight: 900;
+        margin-bottom: 0.5rem;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+    
+    .stat-label {
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    
+    .modern-card {
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(30, 58, 138, 0.1);
+        transition: all 0.3s ease;
+        border: none;
+    }
+    
+    .modern-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(30, 58, 138, 0.2);
+    }
+    
+    .card-header-navy {
+        background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        color: white;
+        padding: 1.5rem;
+        border: none;
+    }
+    
+    .card-header-blue {
+        background: linear-gradient(135deg, #1e40af 0%, #60a5fa 100%);
+        color: white;
+        padding: 1.5rem;
+        border: none;
+    }
+    
+    .page-title {
+        background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-size: 2.5rem;
+        font-weight: 900;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    
+    .icon-large {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        display: block;
+    }
+</style>
+
+<div class="container-fluid">
+    <h1 class="page-title">🚀 Gösterge Paneli</h1>
+    
+    <!-- Ana İstatistik Kartları -->
+    <div class="row mb-5">
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="stat-card navy-gradient-1">
+                <span class="icon-large">🏝️</span>
+                <div class="stat-number">@ViewBag.TotalDestinations</div>
+                <div class="stat-label">Destinasyonlar</div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="stat-card navy-gradient-2">
+                <span class="icon-large">🛎️</span>
+                <div class="stat-number">@ViewBag.TotalServices</div>
+                <div class="stat-label">Hizmetler</div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="stat-card navy-gradient-3">
+                <span class="icon-large">✈️</span>
+                <div class="stat-number">@ViewBag.TotalTrips</div>
+                <div class="stat-label">Turlar</div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="stat-card navy-gradient-4">
+                <span class="icon-large">👨‍💼</span>
+                <div class="stat-number">@ViewBag.TotalAdmins</div>
+                <div class="stat-label">Adminler</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- İkinci Sıra İstatistikler -->
+    <div class="row mb-5">
+        <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+            <div class="stat-card" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);">
+                <span class="icon-large">📂</span>
+                <div class="stat-number">@ViewBag.TotalCategories</div>
+                <div class="stat-label">Kategoriler</div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+            <div class="stat-card" style="background: linear-gradient(135deg, #1e293b 0%, #334155 100%);">
+                <span class="icon-large">🎯</span>
+                <div class="stat-number">@ViewBag.TotalTripExamples</div>
+                <div class="stat-label">Tur Örnekleri</div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+            <div class="stat-card" style="background: linear-gradient(135deg, #334155 0%, #475569 100%);">
+                <span class="icon-large">💬</span>
+                <div class="stat-number">@ViewBag.TotalTestimonials</div>
+                <div class="stat-label">Referanslar</div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+            <div class="stat-card" style="background: linear-gradient(135deg, #475569 0%, #64748b 100%);">
+                <span class="icon-large">🖼️</span>
+                <div class="stat-number">@ViewBag.TotalSliders</div>
+                <div class="stat-label">Slider'lar</div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+            <div class="stat-card" style="background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);">
+                <span class="icon-large">🤝</span>
+                <div class="stat-number">@ViewBag.TotalSponsors</div>
+                <div class="stat-label">Sponsorlar</div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+            <div class="stat-card" style="background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);">
+                <span class="icon-large">👥</span>
+                <div class="stat-number">@ViewBag.TotalSubscribers</div>
+                <div class="stat-label">Aboneler</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detay Kartları -->
+    <div class="row">
+        <div class="col-lg-6 mb-4">
+            <div class="modern-card">
+                <div class="card-header-navy">
+                    <h5 class="mb-0">📊 İçerik İstatistikleri</h5>
+                </div>
+                <div class="card-body p-4">
+                    <div class="row text-center">
+                        <div class="col-6 mb-3">
+                            <div class="p-3" style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); border-radius: 15px;">
+                                <h3 style="color: #1e40af; font-weight: bold;">@ViewBag.TotalCategories</h3>
+                                <p style="color: #1e40af; margin: 0;">Kategoriler</p>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <div class="p-3" style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); border-radius: 15px;">
+                                <h3 style="color: #1e40af; font-weight: bold;">@ViewBag.TotalTripExamples</h3>
+                                <p style="color: #1e40af; margin: 0;">Tur Örnekleri</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="p-3" style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); border-radius: 15px;">
+                                <h3 style="color: #1e40af; font-weight: bold;">@ViewBag.TotalTestimonials</h3>
+                                <p style="color: #1e40af; margin: 0;">Referanslar</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="p-3" style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); border-radius: 15px;">
+                                <h3 style="color: #1e40af; font-weight: bold;">@ViewBag.TotalSliders</h3>
+                                <p style="color: #1e40af; margin: 0;">Slider'lar</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-6 mb-4">
+            <div class="modern-card">
+                <div class="card-header-blue">
+                    <h5 class="mb-0">📈 Sistem Özeti</h5>
+                </div>
+                <div class="card-body p-4">
+                    <div class="row text-center">
+                        <div class="col-6 mb-3">
+                            <div class="p-3" style="background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-radius: 15px;">
+                                <h3 style="color: #1e3a8a; font-weight: bold;">@ViewBag.TotalSponsors</h3>
+                                <p style="color: #1e3a8a; margin: 0;">Sponsorlar</p>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <div class="p-3" style="background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-radius: 15px;">
+                                <h3 style="color: #1e3a8a; font-weight: bold;">@ViewBag.TotalSubscribers</h3>
+                                <p style="color: #1e3a8a; margin: 0;">Aboneler</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="p-3" style="background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-radius: 15px;">
+                                <h3 style="color: #1e3a8a; font-weight: bold;">@ViewBag.TotalDestinations</h3>
+                                <p style="color: #1e3a8a; margin: 0;">Destinasyonlar</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="p-3" style="background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-radius: 15px;">
+                                <h3 style="color: #1e3a8a; font-weight: bold;">@ViewBag.TotalServices</h3>
+                                <p style="color: #1e3a8a; margin: 0;">Hizmetler</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Özet Bilgi -->
+    <div class="row">
+        <div class="col-12">
+            <div class="text-center p-4" style="background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%); border-radius: 20px; border: 2px solid #3b82f6;">
+                <h4 style="color: #1e3a8a; font-weight: bold;">
+                    🎯 Toplam <span style="color: #3b82f6;">@(ViewBag.TotalDestinations + ViewBag.TotalServices + ViewBag.TotalTrips + ViewBag.TotalCategories + ViewBag.TotalTripExamples + ViewBag.TotalTestimonials + ViewBag.TotalSliders + ViewBag.TotalAdmins + ViewBag.TotalSponsors + ViewBag.TotalSubscribers)</span> İçerik Yönetiliyor
+                </h4>
+                <p style="color: #64748b; margin: 0;">Modern ve profesyonel seyahat platform yönetimi</p>
+            </div>
+        </div>
+    </div>
+</div>

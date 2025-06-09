@@ -1,0 +1,66 @@
+﻿@model List<AcunMedyaTravelProject.Entities.Subscriber>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<div class="container">
+    <br /><br />
+    <h2>Abonelikler</h2>
+
+    <!-- 🔍 Arama Formu -->
+    <form method="get" action="@Url.Action("Index", "Subscriber")" class="mb-3">
+        <div class="input-group" style="width: 300px;">
+            <input type="text" name="search" class="form-control" placeholder="E-posta ara..." value="@Request.QueryString["search"]" />
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="submit">Ara</button>
+            </div>
+        </div>
+    </form>
+
+    <!-- 📋 Abonelik Tablosu -->
+    <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Mail Adresi</th>
+                <th>Abonelik Zamanı</th>
+                <th>Sil</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Email</td>
+                    <td>@item.SubscribedAt.ToString("dd.MM.yyyy HH:mm")</td>
+                    <td>
+                        <button class="btn btn-danger" onclick="Delete(@item.Id)">Sil</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<!-- 🧨 SweetAlert ile Silme İşlemi -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function Delete(id) {
+        Swal.fire({
+            title: "Emin misin?",
+            text: "Bu işlemin geri dönüşü yoktur!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Evet, sil!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "/Subscriber/DeleteSubscriber/" + id;
+            }
+        });
+    }
+</script>

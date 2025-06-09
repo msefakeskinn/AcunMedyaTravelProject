@@ -1,0 +1,23 @@
+﻿@model AcunMedyaTravelProject.Entities.TripExample
+
+@{
+    ViewBag.Title = "UpdateTripExamples";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<h2>Burası Seyehat Rehberi Güncelleme Sayfası</h2>
+<form method="post">
+    @Html.HiddenFor(a => a.TripExampleID)
+    <label>Başlık</label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <label>Açıklama1</label>
+    @Html.TextBoxFor(x => x.Description1, new { @class = "form-control" })
+    <label>İkon</label>
+    @Html.TextBoxFor(x => x.IconURL, new { @class = "form-control" })
+    <label>Resim</label>
+    @Html.TextBoxFor(x => x.ImageURL, new { @class = "form-control" })
+    <label>Açıklama2</label>
+    @Html.TextBoxFor(x => x.Description2, new { @class = "form-control" })
+    <button type="submit">Güncelle</button>
+</form>

@@ -1,0 +1,21 @@
+﻿@model List<AcunMedyaTravelProject.Entities.Trip>
+
+            <div class="col-lg-6">
+                <div class="mb-4 text-start">
+                    <h5 class="text-secondary">Hızlı ve Kolay Rezervasyon </h5>
+                    </div>
+                    @foreach (var item in Model)
+                    {
+                    <h3 class="fs-xl-10 fs-lg-8 fs-7 fw-bold font-cursive text-capitalize">@item.Title</h3>
+               
+                <div class="d-flex align-items-start mb-5">
+                    <div class="bg-primary me-sm-4 me-3 p-3" style="border-radius: 13px"> <img src="@item.IconURL" width="22" alt="steps" /></div>
+                    <div class="flex-1">
+                        <h5 class="text-secondary fw-bold fs-0">@item.Description1</h5>
+                        <p> @item.Description2<br class="d-none d-sm-block"> </p>
+                    </div>
+                </div>
+                    }
+              
+                </div>
+        

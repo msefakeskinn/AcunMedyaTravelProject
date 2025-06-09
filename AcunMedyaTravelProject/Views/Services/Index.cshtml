@@ -1,0 +1,68 @@
+﻿@model List < AcunMedyaTravelProject.Entities.Services>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container">
+
+    <br /><br />
+    <h2>Hizmet sayfası</h2>
+
+
+    <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Başlık</th>
+                <th>Açıklama</th>
+                <th>Resim</th>
+                <th>Güncelle</th>
+                <th>Sil</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ServicesID</td>
+                    <td>@item.Title</td>
+                    <td>@item.Description</td>
+                    <td><img src="@item.ImageURL" style="width: 50px;height:50px;" /></td>
+                    <td><a href="/Services/UpdateServices/@item.ServicesID" class="btn btn-success">Güncelle</a></td>
+                    <td><button class="btn btn-danger" onclick="Delete(@item.ServicesID)">Sil</button></td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+    <br /><br />
+    <a href="/Services/AddServices" class="btn btn-dribbble">Oluştur</a>
+
+
+</div>
+<script>
+    function Delete(id) {
+        Swal.fire({
+            title: "Emin Misin?",
+            text: "Dikkat bu işlemin geri dönüşü yoktur!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Evet"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    title: "Silindi!",
+                    text: "Silme işlemi başarılı.",
+                    icon: "success",
+                    timer: 2000
+                }).then(() => {
+                    window.location.href = "/Services/DeleteServices/" + id;
+                });
+            }
+        });
+    }
+</script>

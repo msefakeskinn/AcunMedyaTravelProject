@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "AddDestinations";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Burası Hizmetler Oluşturma Sayfası</h2>
+<form method="post">
+    <label>Resim</label>
+    <input type="text" class="form-control" name="ImageURL" />
+    <label>Başlık</label>
+    <input type="text" class="form-control" name="Title" />
+    <label>Açıklama1</label>
+    <input type="text" class="form-control" name="Description1" />
+    <label>Açıklama2</label>
+    <input type="text" class="form-control" name="Description2" />
+    <label>Kategori</label>
+    <select name="CategoryID" class="form-control">
+
+        @foreach (var item in ViewBag.categories)
+        {
+            <option value="@item.Value">@item.Text</option>
+        }
+    </select>
+    <button class="btn btn-success">Ekle</button>
+
+</form>

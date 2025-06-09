@@ -1,0 +1,195 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+
+
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+
+    <!-- ===============================================-->
+    <!--    Document Title-->
+    <!-- ===============================================-->
+    <title>Asef Turizm</title>
+
+   
+    <!-- ===============================================-->
+    <!--    Favicons-->
+    <!-- ===============================================-->
+    <link rel="apple-touch-icon" sizes="180x180" href="~/jadoo/public/assets/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="~/jadoo/public/assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/jadoo/public/assets/img/favicons/favicon-16x16.png">
+    <link rel="shortcut icon" type="image/x-icon" href="~/jadoo/public/assets/img/favicons/favicon.ico">
+    <link rel="manifest" href="~/jadoo/public/assets/img/favicons/manifest.json">
+    <meta name="msapplication-TileImage" content="~/jadoo/public/assets/img/favicons/mstile-150x150.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- ===============================================-->
+    <!--    Stylesheets-->
+    <!-- ===============================================-->
+    <link href="~/jadoo/public/assets/css/theme.css" rel="stylesheet" />
+
+</head>
+
+
+<body>
+
+    <!-- ===============================================-->
+    <!--    Main Content-->
+    <!-- ===============================================-->
+    <main class="main" id="top">
+
+        @Html.Action("PartialNavbar", "Default")
+
+        <!--/.bg-holder-->
+
+        @Html.Action("PartialSliders", "Default")
+
+
+
+        <!-- ============================================-->
+        <!-- <section> begin ============================-->
+
+        @Html.Action("PartialServices", "Default")
+
+
+        <!-- <section> close ============================-->
+        <!-- ============================================-->
+        <!-- ============================================-->
+        <!-- <section> begin ============================-->
+
+        @Html.Action("PartialDestinations", "Default")
+
+        <!-- <section> close ============================-->
+        <!-- ============================================-->
+        <!-- ============================================-->
+        <!-- <section> begin ============================-->
+        <section id="booking">
+
+            <div class="container">
+                <div class="row align-items-center">
+
+                    @Html.Action("PartiaTrips", "Default")
+
+
+                    @Html.Action("PartialTripExamples", "Default")
+
+                </div>
+            </div>
+
+        </section>
+
+
+
+        <!-- <section> close ============================-->
+        <!-- ============================================-->
+        <!-- ============================================-->
+        <!-- <section> begin ============================-->
+
+        @Html.Action("PartialTestimonials", "Default")
+
+        <!-- <section> close ============================-->
+        <!-- ============================================-->
+
+
+        @Html.Action("PartialSponsors", "Default")
+
+
+        <!-- ============================================-->
+        <!-- <section> begin ============================-->
+
+        <section class="pt-6">
+
+            <div class="container">
+                <div class="py-8 px-5 position-relative text-center" style="background-color: rgba(223, 215, 249, 0.199);border-radius: 129px 20px 20px 20px;">
+                    <div class="position-absolute start-100 top-0 translate-middle ms-md-n3 ms-n4 mt-3"> <img src="/jadoo/public/assets/img/cta/send.png" style="max-width:70px;" alt="send icon" /></div>
+                    <div class="position-absolute end-0 top-0 z-index--1"> <img src="/jadoo/public/assets/img/cta/shape-bg2.png" width="264" alt="cta shape" /></div>
+                    <div class="position-absolute start-0 bottom-0 ms-3 z-index--1 d-none d-sm-block"> <img src="/jadoo/public/assets/img/cta/shape-bg1.png" style="max-width: 340px;" alt="cta shape" /></div>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 col-md-10">
+
+                            <h2 class="text-secondary lh-1-7 mb-7">Bilgi Almak ve Yeni Gelişmelerden Haberdar Olmak İçin Hemen Abone ol</h2>
+                            <form class="row g-3 align-items-center w-lg-75 mx-auto" id="subscriceForm">
+                                <div class="col-sm">
+                                    <div class="input-group-icon">
+                                        <input class="form-control form-little-squirrel-control" type="email" placeholder="Enter email " aria-label="email" name="Email" required /><img class="input-box-icon" src="/jadoo/public/assets/img/cta/mail.svg" width="17" alt="mail" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-auto">
+                                    <button type="submit" class="btn btn-danger orange-gradient-btn fs--1">Abone Ol</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- end of .container-->
+
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+            <script>
+    $('#subscriceForm').on('submit', function (e) {
+        e.preventDefault(); // Tarayıcının formu gönderdikten sonra yeniden yüklenmesini engelliyor
+
+        $.post('@Url.Action("PartialSubscribers", "Default")', $(this).serialize(), function (response) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Abone olundu',
+                text: response.message,
+                timer: 5000,
+                timerProgressBar: true,
+                showConfirmButton: false
+            });
+
+            setTimeout(() => location.reload(), 5000);
+        });
+    });
+            </script>
+
+
+
+
+
+
+
+
+        </section>
+
+
+        <!-- <section> close ============================-->
+        <!-- ============================================-->
+        <!-- ============================================-->
+        <!-- <section> begin ============================-->
+
+        @Html.Action("PartialContainer", "Default")
+
+        <!-- <section> close ============================-->
+        <!-- ============================================-->
+
+    </main>
+             
+    <!-- ===============================================-->
+    <!--    End of Main Content-->
+    <!-- ===============================================-->
+    <!-- ===============================================-->
+    <!--    JavaScripts-->
+    <!-- ===============================================-->
+    <script src="vendors/popperjs/popper.min.js"></script>
+    <script src="vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="vendors/is/is.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="vendors/fontawesome/all.min.js"></script>
+    <script src="assets/js/theme.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Volkhov:wght@700&amp;display=swap" rel="stylesheet">
+</body>
+
+</html>

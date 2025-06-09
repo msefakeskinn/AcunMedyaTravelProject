@@ -1,0 +1,19 @@
+﻿@model AcunMedyaTravelProject.Entities.Sliders
+@{
+    ViewBag.Title = "UpdateSliders";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Burası Hizmetler Güncelleme Sayfası</h2>
+<form method="post">
+    @Html.HiddenFor(a => a.SliderID)
+    <label>Başlık</label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <label>Açıklama1</label>
+    @Html.TextBoxFor(x => x.Description1, new { @class = "form-control" })
+    <label>Açıklama2</label>
+    @Html.TextBoxFor(x => x.Description2, new { @class = "form-control" })
+    <label>Resim</label>
+    @Html.TextBoxFor(x => x.ImageURL, new { @class = "form-control" })
+    <button type="submit">Güncelle</button>
+</form>

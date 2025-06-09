@@ -1,0 +1,17 @@
+﻿@model AcunMedyaTravelProject.Entities.Sponsor
+@{
+    ViewBag.Title = "UpdateSponsors";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Sponsor Güncelleme Sayfası</h2>
+
+<form method="post">
+
+    @Html.HiddenFor(a => a.SponsorID)
+
+    <label>Resim</label>
+    @Html.TextBoxFor(x => x.ImageURL, new { @class = "form-control" })
+    <button type="submit">Güncelle</button>
+
+</form>

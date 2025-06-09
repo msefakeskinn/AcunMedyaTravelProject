@@ -1,0 +1,109 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin Giriş</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background: linear-gradient(to right, #0066cc, #003366);
+            color: white;
+        }
+
+        .login-card {
+            background-color: white;
+            color: #333;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .form-control:focus {
+            border-color: #0066cc;
+            box-shadow: 0 0 0 0.2rem rgba(0,102,204,0.25);
+        }
+
+        a {
+            color: #0066cc;
+        }
+
+        .top-bar {
+            padding: 10px 30px;
+            background-color: rgba(255, 255, 255, 0.15);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .dev-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+            .dev-info img {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                border: 2px solid white;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <h4 class="mb-0 fw-bold">Admin Paneli</h4>
+        <div class="dev-info">
+            <span class="fw-semibold">Developer: Muhammed Sefa Keskin</span>
+            <img src="https://media.licdn.com/dms/image/v2/D4D03AQHRyoBC8JU1WQ/profile-displayphoto-shrink_200_200/B4DZYK9aygHsAY-/0/1743940596371?e=2147483647&v=beta&t=sOK_AVHjxBgwMyLJODkrmySclCOnLQb4QeeGnIk0NQg" alt="Muhammed Sefa Keskin" />
+        </div>
+    </div>
+
+    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+        <div class="login-card p-4" style="width: 100%; max-width: 400px;">
+            <div class="text-center mb-4">
+                <h3 class="fw-bold text-primary">Admin Paneline Hoş Geldiniz 👋</h3>
+                <p class="text-muted">Yönetim paneline erişmek için lütfen giriş bilgilerinizi giriniz.</p>
+            </div>
+
+            <form action="/Login/Index" method="post">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Kullanıcı Adı</label>
+                    <input type="text" class="form-control" id="username" name="UserName" placeholder="admin" required />
+                </div>
+
+                <div class="mb-3">
+                    <label for="password" class="form-label">Şifre</label>
+                    <input type="password" class="form-control" id="password" name="Password" placeholder="••••••••" required />
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="rememberMe" name="RememberMe" />
+                        <label class="form-check-label" for="rememberMe">Beni Hatırla</label>
+                    </div>
+                    <a href="#" class="text-decoration-none small">Şifremi Unuttum?</a>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">Giriş Yap</button>
+
+                @if (!ViewData.ModelState.IsValid)
+                {
+                    <div class="alert alert-danger mt-3" role="alert">
+                        @Html.ValidationSummary()
+                    </div>
+                }
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
