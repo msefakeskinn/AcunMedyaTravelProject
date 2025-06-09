@@ -8,26 +8,42 @@ Ayrıca, özel 404 hata sayfası ve kullanıcı dostu arayüzüyle keyifli bir d
 🌟 Öne Çıkan Özellikler
 
 🏠 Ana Sayfa – Hızlı erişim ve etkileyici bir karşılama bölümü
+
 📍 Konumlar – Popüler seyahat noktaları hakkında detaylı bilgiler
+
 🧳 Hizmetler – Şirketin sunduğu tüm seyahat hizmetlerinin listesi
+
 🤝 Sponsorlar – İş ortakları ve sponsorların tanıtımı
+ 
 💬 Mesajlar – Gerçek kullanıcı geri bildirimleri
+
 📬 İletişim – Kullanıcıların firmayla iletişime geçebileceği form
+
 🚫 404 Sayfası – Kişiselleştirilmiş ve kullanıcı dostu hata sayfası
+
 🔐 Giriş Paneli – Yetkili kullanıcılar için güvenli giriş ekranı
 
 
 🛠️ Kullanılan Teknolojiler
 
 💡 Teknoloji	✅ Açıklama
+
 🖥️ ASP.NET MVC	MVC mimarisiyle modüler yapı
+
 🧱 Code First	Veritabanını kodla oluşturma
+
 🔍 LINQ	Veri sorgulama ve filtreleme
+
 ✏️ CRUD	Ekleme, listeleme, güncelleme, silme
+
 🧩 Partial View	Tekrarlayan bileşenlerin yönetimi
+
 🎨 HTML, CSS, Bootstrap	Modern ve duyarlı tasarım
+
 ⚙️ JavaScript	Dinamik kullanıcı etkileşimi
+
 🧭 Layout	Sayfa şablonlarının yapılandırılması
+
 💾 MS SQL Server	Verilerin güvenli şekilde saklanması
 
 
@@ -49,7 +65,7 @@ Admin yetkisi olan kullanıcılar için şifre korumalı sistem mevcuttur.
 
 Ana Sayfa:
 ![Ekran görüntüsü 2025-06-07 190233](https://github.com/user-attachments/assets/8a3fff8e-fb54-441e-98d2-5ed90f016d2f)
-
+ 
 Abone Sayfası:
 ![Ekran görüntüsü 2025-06-07 185632](https://github.com/user-attachments/assets/39f3b583-5ee1-403b-82ca-f856fe47f8ef)
 
