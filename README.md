@@ -46,6 +46,7 @@ Yanlış bağlantılarda kullanıcıya özel bir hata sayfası sunulur.
 Admin yetkisi olan kullanıcılar için şifre korumalı sistem mevcuttur.
 
 🖼️ Proje Görselleri
+
 Ana Sayfa:
 ![Ekran görüntüsü 2025-06-07 190233](https://github.com/user-attachments/assets/8a3fff8e-fb54-441e-98d2-5ed90f016d2f)
 
