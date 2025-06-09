@@ -5,7 +5,9 @@ Kullanıcılara; konumlar, hizmetler, seyahat rehberleri, sponsorlar ve yorumlar
 Ayrıca, özel 404 hata sayfası ve kullanıcı dostu arayüzüyle keyifli bir deneyim sağlar.
 
 
+
 🌟 Öne Çıkan Özellikler
+
 
 🏠 Ana Sayfa – Hızlı erişim ve etkileyici bir karşılama bölümü
 
@@ -24,7 +26,10 @@ Ayrıca, özel 404 hata sayfası ve kullanıcı dostu arayüzüyle keyifli bir d
 🔐 Giriş Paneli – Yetkili kullanıcılar için güvenli giriş ekranı
 
 
+
+
 🛠️ Kullanılan Teknolojiler
+
 
 💡 Teknoloji	✅ Açıklama
 
@@ -47,7 +52,9 @@ Ayrıca, özel 404 hata sayfası ve kullanıcı dostu arayüzüyle keyifli bir d
 💾 MS SQL Server	Verilerin güvenli şekilde saklanması
 
 
+
 🚀 Kullanım Rehberi
+
 
 🔐 Admin Paneli:
 Yetkili kullanıcılar içerikleri (destinasyon, hizmet, rehber vb.) kolaylıkla yönetebilir.
