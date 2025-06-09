@@ -1,9 +1,12 @@
 ✈️ Travel Web Sitesi
+
 Bu proje, Acunmedya Akademi’nin "C# Programlama" eğitimi kapsamında geliştirilen ikinci projedir.
 Kullanıcılara; konumlar, hizmetler, seyahat rehberleri, sponsorlar ve yorumlar gibi zengin içerikler sunar.
 Ayrıca, özel 404 hata sayfası ve kullanıcı dostu arayüzüyle keyifli bir deneyim sağlar.
 
+
 🌟 Öne Çıkan Özellikler
+
 🏠 Ana Sayfa – Hızlı erişim ve etkileyici bir karşılama bölümü
 📍 Konumlar – Popüler seyahat noktaları hakkında detaylı bilgiler
 🧳 Hizmetler – Şirketin sunduğu tüm seyahat hizmetlerinin listesi
@@ -12,7 +15,10 @@ Ayrıca, özel 404 hata sayfası ve kullanıcı dostu arayüzüyle keyifli bir d
 📬 İletişim – Kullanıcıların firmayla iletişime geçebileceği form
 🚫 404 Sayfası – Kişiselleştirilmiş ve kullanıcı dostu hata sayfası
 🔐 Giriş Paneli – Yetkili kullanıcılar için güvenli giriş ekranı
+
+
 🛠️ Kullanılan Teknolojiler
+
 💡 Teknoloji	✅ Açıklama
 🖥️ ASP.NET MVC	MVC mimarisiyle modüler yapı
 🧱 Code First	Veritabanını kodla oluşturma
@@ -23,7 +29,10 @@ Ayrıca, özel 404 hata sayfası ve kullanıcı dostu arayüzüyle keyifli bir d
 ⚙️ JavaScript	Dinamik kullanıcı etkileşimi
 🧭 Layout	Sayfa şablonlarının yapılandırılması
 💾 MS SQL Server	Verilerin güvenli şekilde saklanması
+
+
 🚀 Kullanım Rehberi
+
 🔐 Admin Paneli:
 Yetkili kullanıcılar içerikleri (destinasyon, hizmet, rehber vb.) kolaylıkla yönetebilir.
 
